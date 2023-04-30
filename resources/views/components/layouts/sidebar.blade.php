@@ -51,7 +51,7 @@
             <div class="space-y-3 ">
                 <label class="px-3 text-xs text-gray-500 uppercase dark:text-gray-400">{{ __('Users') }}</label>
 
-                <x-layouts.sidebar-nav :href="route('admin.dashboard')" :active="request()->routeIs('store.home')">
+                <x-layouts.sidebar-nav :href="route('admin.users.index')" :active="request()->routeIs('admin.users*')">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-5 h-5">
                         <path stroke-linecap="round" stroke-linejoin="round"

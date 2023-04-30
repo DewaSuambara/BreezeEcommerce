@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProductController as AdminProductController;
 use App\Http\Controllers\Admin\UploadController;
+use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
@@ -40,12 +41,12 @@ Route::middleware('auth', 'verified')->prefix('admin')->as('admin.')->group(func
         Route::post('/upload', 'upload')->name('upload');
         Route::delete('/delete', 'delete')->name('delete');
     });
-    Route::post('/upload', [UploadController::class, 'upload'])->name('upload');
 
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/report', [DashboardController::class, 'report'])->name('dashboard.report');
 
     Route::resource('/products', AdminProductController::class);
+    Route::resource('/users', UserController::class);
 });
 
 require __DIR__ . '/auth.php';
